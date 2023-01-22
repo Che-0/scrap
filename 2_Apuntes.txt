@@ -1,0 +1,26 @@
+Ps queda claro lo que se tiene que hacer para empezar
+
+
+primero importamos las librerias bs4 y request
+
+despues creamos una variable llamada url y le asignamos la url de la pagina que queremos scrapear
+creamos una variable llamada result y le asignamos la funcion request.get(url) para que nos traiga la pagina
+despues creamos una variable llamada soup y le asignamos la funcion bs4.BeautifulSoup(content, "html.parser"  o lxml) 
+para que nos traiga el codigo html de la pagina
+
+Despues tenemos que imprimir la variable con el metodo .prettify() para que nos muestre el codigo html de la pagina en orden
+
+
+Es recomendado buscar elementos en este orden:
+1. ID
+2. Class Name 
+3. Tag Name, CSS Selector
+4. XPath
+
+
+Asi que para buscar lo que tenemos que poner es 
+soup.find("div", {"class": "class_name"}) o soup.find("div", {"id": "id_name"})
+o soup.find("div", {"tag_name": "tag_name"}) o 
+soup.find("div", {"css_selector": "css_selector"}) o soup.find("div", {"xpath": "xpath"})
+
+find tambien tiene findall para encontrar todos los elementos que coincidan con el parametro que le pasemos
